@@ -41,7 +41,7 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>univ_lorraine.iut.java.PrivateChat.App</mainClass>
+                            <mainClass>univ_lorraine.iut.java.privatechat.App</mainClass>
                         </configuration>
                     </execution>
                 </executions>
