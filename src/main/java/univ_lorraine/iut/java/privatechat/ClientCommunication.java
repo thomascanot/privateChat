@@ -7,7 +7,6 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class ClientCommunication implements Runnable {
-
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
@@ -30,12 +29,9 @@ public class ClientCommunication implements Runnable {
             System.out.println("Saisie d'un message : ");
             String message2 = scanner.nextLine();
             oos.writeObject(message2);
-
-
         } catch (Exception e) {
-
+            // On ne fait rien
         }
-
     }
 
     public void close() {
@@ -48,5 +44,4 @@ public class ClientCommunication implements Runnable {
             e.printStackTrace();
         }
     }
-
 }
