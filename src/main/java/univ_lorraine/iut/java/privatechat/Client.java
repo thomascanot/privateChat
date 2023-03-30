@@ -10,7 +10,7 @@ public class Client {
         try {
             while(true) {
                 InetAddress host = InetAddress.getLocalHost();
-                Socket socket  = new Socket(host.getHostName(), 9876);
+                Socket socket  = new Socket(host.getHostName(), 12345);
                 ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
                 ObjectInputStream ois = null;
                 Scanner scanner = new Scanner(System.in);

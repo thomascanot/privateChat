@@ -1,21 +1,18 @@
 package univ_lorraine.iut.java.privatechat;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Serveur {
-    private static ServerSocket server;
-    private static int port = 9876;
-    private static Boolean running=true;
 
-    public static void main(String args[]) throws IOException, ClassNotFoundException{
-        server = new ServerSocket(port);
+    public static void main(String[] args) throws IOException, ClassNotFoundException{
+        int port = 12345;
+        ServerSocket server = new ServerSocket(port);
         List<Thread> threadList = new ArrayList<>();
+        boolean running = true;
 
         while(running){
             Socket socket = server.accept();
