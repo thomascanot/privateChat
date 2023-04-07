@@ -6,6 +6,7 @@ import java.io.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import univ_lorraine.iut.java.privatechat.App;
@@ -20,6 +21,9 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
+    @FXML
+    private Button loginButton;
+
     private static final String FILE_EXTENSION = ".pwd";
 
     private boolean isValidUsername(String username) {
@@ -32,7 +36,7 @@ public class LoginController {
 
 
     private boolean checkPassword(String login, String password) {
-        try (BufferedReader reader = new BufferedReader(new FileReader("data/" + login + ".pwd"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(login + ".pwd"))) {
             String readLine = reader.readLine();
             String requiredLine = "password=" + password;
             if (requiredLine.equals(readLine)) {
@@ -89,6 +93,9 @@ public class LoginController {
                 e.printStackTrace();
             }
         }
+
+        // Lancer la fenêtre de chat
+        App.setRoot("chat");
     }
 }
 
