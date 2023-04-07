@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Alert?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="univ_lorraine.iut.java.privatechat.controller.LoginController">
-   <children>
-      <Label text="Login" />
-      <Button fx:id="btnLogin" text="login" onAction="#login"/>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="univ_lorraine.iut.java.privatechat.controller.LoginController">
+   <center>
+      <VBox alignment="CENTER" spacing="20.0">
+         <Label text="Bienvenue sur notre application de chat" />
+         <HBox spacing="10.0">
+            <Label text="Nom d'utilisateur" />
+            <TextField fx:id="usernameField" />
+         </HBox>
+         <HBox spacing="10.0">
+            <Label text="Mot de passe" />
+            <PasswordField fx:id="passwordField" />
+         </HBox>
+         <Button fx:id="btnLogin" text="Se connecter" onAction="#login" />
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" spacing="10.0" padding="10.0">
+         <Label text="Application de chat développée par Thomas et Clément" />
+      </HBox>
+   </bottom>
+</BorderPane>
+
