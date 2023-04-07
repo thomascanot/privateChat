@@ -94,8 +94,9 @@ public class LoginController {
             }
         }
 
-        // Lancer la fenêtre de chat
+        // Lancer le chat
         App.setRoot("chat");
+
     }
 }
 
