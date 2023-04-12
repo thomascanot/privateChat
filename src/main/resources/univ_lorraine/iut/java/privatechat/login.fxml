@@ -13,7 +13,7 @@
    <left>
       <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: #FF0040;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="7.0" layoutY="77.0" prefHeight="17.0" prefWidth="215.0" text="CypherChat" textAlignment="CENTER" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="7.0" layoutY="77.0" prefHeight="17.0" prefWidth="215.0" text="PrivateChat" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Microsoft YaHei Bold" size="31.0" />
                </font>
@@ -31,7 +31,7 @@
    <right>
       <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="62.0" layoutY="35.0" prefHeight="17.0" prefWidth="176.0" text="Secure Login">
+            <Label alignment="CENTER" layoutX="62.0" layoutY="35.0" prefHeight="17.0" prefWidth="176.0" text="Login">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -47,7 +47,7 @@
                </font>
             </Label>
             <PasswordField fx:id="passwordField" layoutX="110.0" layoutY="163.0" promptText="Password" />
-            <Button fx:id="LoginButton" onAction="#login" layoutX="38.0" layoutY="251.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="224.0" style="-fx-background-color: #FF0040;" text="Login"/>
+            <Button fx:id="loginButton" onAction="#login" layoutX="38.0" layoutY="251.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="224.0" style="-fx-background-color: #FF0040;" text="Login"/>
             <TextField fx:id="usernameField" layoutX="109.0" layoutY="119.0" promptText="Username" />
          </children>
       </AnchorPane>

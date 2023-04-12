@@ -95,6 +95,7 @@ public class LoginController {
         }
 
         // Lancer le chat
+        App.setUser(username);
         App.setRoot("chat");
 
     }
