@@ -1,16 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="univ_lorraine.iut.java.privatechat.controller.LoginController">
-   <children>
-      <Label text="Login" />
-      <Button fx:id="btnLogin" text="login" onAction="#login"/>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<BorderPane fx:controller="univ_lorraine.iut.java.privatechat.controller.LoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: #FF0040;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="77.0" prefHeight="17.0" prefWidth="215.0" text="CypherChat" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Bold" size="31.0" />
+               </font>
+            </Label>
+            <Line endX="41.5" layoutX="132.0" layoutY="132.0" startX="-100.0" stroke="WHITE" />
+            <Label layoutX="32.0" layoutY="146.0" text="Thomas et Clement" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="369.0" text="Projet d'archlog" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="62.0" layoutY="35.0" prefHeight="17.0" prefWidth="176.0" text="Secure Login">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="124.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="170.0" text="Password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="110.0" layoutY="163.0" promptText="Password" />
+            <Button fx:id="LoginButton" onAction="#login" layoutX="38.0" layoutY="251.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="224.0" style="-fx-background-color: #FF0040;" text="Login"/>
+            <TextField fx:id="usernameField" layoutX="109.0" layoutY="119.0" promptText="Username" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
