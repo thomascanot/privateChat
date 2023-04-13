@@ -26,6 +26,7 @@ public class AddContactController {
 
     @FXML
     private void submit() throws IOException {
+        App.setWindowSize(1310, 760);
         App.setRoot("chat", new Contact(txt_pseudo.getText(), txt_ip.getText(), Integer.parseInt(txt_port.getText())));
     }
 }

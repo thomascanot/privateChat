@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import univ_lorraine.iut.java.privatechat.App;
+import univ_lorraine.iut.java.privatechat.Serveur;
 import univ_lorraine.iut.java.privatechat.model.PasswordHasher;
 
 
@@ -105,7 +106,6 @@ public class LoginController {
         App.setUser(username);
         App.setWindowSize(1310, 760);
         App.setRoot("chat");
-
     }
 }
 

@@ -9,8 +9,7 @@ public class ConversationListCell extends ListCell<Conversation> {
         super();
         this.setOnMouseClicked(event -> {
             if (! this.isEmpty()) {
-                String[] args = null;
-                Serveur.main(args);
+                //rien
             }
         });
     }
