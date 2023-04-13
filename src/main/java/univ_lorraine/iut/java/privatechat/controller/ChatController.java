@@ -105,11 +105,11 @@ public class ChatController implements DataController{
     }
 
     @FXML
-    private TextField inputField;
+    public TextField inputField;
 
     @FXML
     private TextArea messageArea;
-
+    
     @FXML
     private void sendMessage(ActionEvent event) {
         String messageText = inputField.getText();
@@ -129,5 +129,10 @@ public class ChatController implements DataController{
            var contact = (Contact) data;
            conversationList.add(new Conversation(null,contact));
         }
+    }
+
+    private static Contact contact;
+    public static void main(String[] args) {
+        contact = new Contact(args[0], args[1], Integer.parseInt(args[2]));
     }
 }

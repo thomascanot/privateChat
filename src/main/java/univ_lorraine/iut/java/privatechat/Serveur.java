@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.List;
 
-public final class Serveur {
+public final class Serveur implements Runnable{
     private static String id;
     private static ServerSocket server;
+    private static int port = 12345;
+    private static Boolean running = true;
 
-    private Serveur() {
-        // Empty Constructor
-    }
 
     /**
      * A function to check if the required command line arguments were passed or not
@@ -26,6 +26,11 @@ public final class Serveur {
         try {
             server = new ServerSocket(port);
         } catch (Exception e) {
+            try {
+                server = new ServerSocket(port + 1);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
             System.out.println(e.getMessage());
         }
     }
@@ -47,11 +52,8 @@ public final class Serveur {
         return th;
     }
 
-    /**
-     * Main function to start a client running
-     * @param args command line arguments
-     */
-    public static void main(String[] args) {
+    public void run() {
+        String[] args = {""};
         handleArgs(args);
         if (server == null) {
             System.out.println("Unable to initiate a server");
@@ -81,10 +83,10 @@ public final class Serveur {
                 System.out.println("Connection Error");
             }
         }
-        for(int i = 0; i < clientThreads.size(); i++){
+        for (Thread clientThread : clientThreads) {
             try {
-                clientThreads.get(i).join();
-            }catch (InterruptedException e){
+                clientThread.join();
+            } catch (InterruptedException e) {
                 System.out.println("A client thread was interrupted");
             }
         }
@@ -97,5 +99,13 @@ public final class Serveur {
                 System.exit(0);
             }
         }
+    }
+
+    /**
+     * Main function to start a client running
+     * @param args command line arguments
+     */
+    public static void main(String[] args) {
+        //rien
     }
 }

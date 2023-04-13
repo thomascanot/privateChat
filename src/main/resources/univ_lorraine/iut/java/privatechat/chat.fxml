@@ -30,12 +30,12 @@
             <ListView fx:id="conversationListView" prefHeight="628.0" prefWidth="360.0" />
                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="50.0" prefWidth="260.0">
                <children>
-                      <Button fx:id="btnAddContact" alignment="CENTER" mnemonicParsing="false" onAction="#addContact" prefHeight="25.0" prefWidth="181.0" text="Ajouter un contact (+)">
+                      <Button fx:id="btnAddContact" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addContact" prefHeight="25.0" prefWidth="153.0" text="Ajouter un contact (+)" translateX="-15.0">
                           <font>
                               <Font name="Consolas" size="12.0" />
                           </font>
                       </Button>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#logout" prefHeight="24.0" prefWidth="362.0" text="Se déconnecter" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logout" prefHeight="24.0" prefWidth="125.0" text="Se déconnecter" />
                </children>
                 </HBox>
             </children>
@@ -49,7 +49,7 @@
                         <TextArea id="messageArea" fx:id="messageArea" editable="false" prefHeight="560.0" prefWidth="938.0" wrapText="true" />
                         <Line endX="938.0" endY="560.0" startX="1.0" startY="560.0" />
                         <TextField fx:id="inputField" layoutX="14.0" layoutY="568.0" prefHeight="88.0" prefWidth="805.0" />
-                        <Button fx:id="sendButton" onAction="#sendMessage" layoutX="850.0" layoutY="600.0" mnemonicParsing="false" text="Envoyer" />
+                        <Button fx:id="sendButton" layoutX="850.0" layoutY="600.0" mnemonicParsing="false" onAction="#sendMessage" text="Envoyer" />
                     </children></AnchorPane>
             </content>
         </ScrollPane>

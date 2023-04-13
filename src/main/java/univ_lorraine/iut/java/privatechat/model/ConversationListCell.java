@@ -1,7 +1,7 @@
 package univ_lorraine.iut.java.privatechat.model;
 import javafx.scene.control.ListCell;
 import univ_lorraine.iut.java.privatechat.Client;
-import univ_lorraine.iut.java.privatechat.Serveur;
+import univ_lorraine.iut.java.privatechat.controller.ChatController;
 
 public class ConversationListCell extends ListCell<Conversation> {
 
@@ -9,7 +9,10 @@ public class ConversationListCell extends ListCell<Conversation> {
         super();
         this.setOnMouseClicked(event -> {
             if (! this.isEmpty()) {
-                //rien
+                Contact contact = this.getItem().getContact();
+                String[] args = {contact.getPseudo(), contact.getIp(), contact.getPort().toString()};
+                Client.main(args);
+                ChatController.main(args);
             }
         });
     }

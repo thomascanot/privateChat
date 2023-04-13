@@ -26,7 +26,7 @@
                                 <Font name="Consolas" size="12.0" />
                             </font>
                         </Label>
-                        <TextField promptText="John Doe" fx:id="txt_pseudo">
+                        <TextField fx:id="txt_pseudo" promptText="John Doe">
                             <VBox.margin>
                                 <Insets bottom="20.0" top="10.0" />
                             </VBox.margin>
@@ -40,7 +40,7 @@
                                 <Font name="Consolas" size="12.0" />
                             </font>
                         </Label>
-                        <TextField promptText="192.168.0.1" fx:id="txt_ip">
+                        <TextField fx:id="txt_ip" promptText="192.168.0.1">
                             <VBox.margin>
                                 <Insets bottom="20.0" top="10.0" />
                             </VBox.margin>
@@ -54,18 +54,23 @@
                                 <Font name="Consolas" size="12.0" />
                             </font>
                         </Label>
-                        <TextField promptText="12345" fx:id="txt_port">
+                        <TextField fx:id="txt_port" promptText="12345">
                             <VBox.margin>
                                 <Insets bottom="20.0" top="10.0" />
                             </VBox.margin>
                         </TextField>
                     </children>
                 </VBox>
-                <Button mnemonicParsing="false" onAction="#submit" text="Ajouter">
-                    <font>
-                        <Font name="Consolas" size="12.0" />
-                    </font>
-                </Button>
+            <Button mnemonicParsing="false" onAction="#submit" text="Ajouter" translateX="40.0">
+               <font>
+                  <Font name="Consolas" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goBack" text="Retour" translateX="-40.0" translateY="-23.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
             </children>
             <VBox.margin>
                 <Insets bottom="10.0" top="20.0" />

@@ -1,5 +1,7 @@
 package univ_lorraine.iut.java.privatechat;
 
+import univ_lorraine.iut.java.privatechat.model.Contact;
+
 import java.io.Console;
 import java.math.BigInteger;
 import java.net.InetAddress;
@@ -50,14 +52,14 @@ public final class Client {
     public static void main(String[] args) {
         id = "1";
         String message = "1. For new Connection type: connect <hostname> <port>\n2. newKeys to calculate new permanent Keys\n3. Anything else to exit application\n";
-        newSession();
+        newSession(args);
     }
 
     /**
      * A function to maintain a new client session
      * It creates a new session and does all key exchange part
      */
-    private static void newSession() {
+    private static void newSession(String[] args) {
         InetAddress host = null;
         try {
             host = InetAddress.getLocalHost();
@@ -65,7 +67,7 @@ public final class Client {
             throw new RuntimeException(e);
         }
         waitForEnter("Send Connection Request To Server?");
-        session = new SessionClient(host.getHostName(), 12345);
+        session = new SessionClient(args[1], Integer.parseInt(args[2]));
         session.connect();
         waitForEnter("Send Key Exchange Request To Server? (Key Request Must be Sent within Two Minutes of Connection)");
         Runtime runtime = Runtime.getRuntime();

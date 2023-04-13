@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
+import java.util.Objects;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -24,9 +25,16 @@ public class AddContactController {
 
     NumberFormat format = NumberFormat.getInstance(Locale.getDefault());
 
+    @FXML void goBack() throws IOException {
+        App.setWindowSize(1310, 760);
+        App.setRoot("chat");
+    }
+
     @FXML
     private void submit() throws IOException {
-        App.setWindowSize(1310, 760);
-        App.setRoot("chat", new Contact(txt_pseudo.getText(), txt_ip.getText(), Integer.parseInt(txt_port.getText())));
+        if (!Objects.equals(txt_pseudo.getText(), "") && !Objects.equals(txt_ip.getText(), "") && !Objects.equals(txt_port.getText(), "")) {
+            App.setWindowSize(1310, 760);
+            App.setRoot("chat", new Contact(txt_pseudo.getText(), txt_ip.getText(), Integer.parseInt(txt_port.getText())));
+        }
     }
 }

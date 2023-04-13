@@ -23,6 +23,7 @@ public class LoginController {
 
     @FXML
     private PasswordField passwordField;
+    private Thread threadServeur;
 
     @FXML
     private Button loginButton;
@@ -105,6 +106,11 @@ public class LoginController {
         // Lancer le chat
         App.setUser(username);
         App.setWindowSize(1310, 760);
+
+        // Lancement du SERVEUR
+        threadServeur = new Thread(new Serveur());
+        threadServeur.start();
+
         App.setRoot("chat");
     }
 }
