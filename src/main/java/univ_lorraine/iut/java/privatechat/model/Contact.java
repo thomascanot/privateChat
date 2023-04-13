@@ -1,6 +1,8 @@
 package univ_lorraine.iut.java.privatechat.model;
 
-public class Contact {
+import java.io.Serializable;
+
+public class Contact implements Serializable {
 
     private String pseudo;
     private String ip;

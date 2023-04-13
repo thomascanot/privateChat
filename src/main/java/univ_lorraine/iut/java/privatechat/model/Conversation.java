@@ -1,8 +1,9 @@
 package univ_lorraine.iut.java.privatechat.model;
 
 import javafx.collections.ObservableList;
+import java.io.Serializable;
 
-public class Conversation {
+public class Conversation implements Serializable {
 
     private ObservableList<Message> messages;
     private Contact contact;

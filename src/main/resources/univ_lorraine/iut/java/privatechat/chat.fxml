@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: FF0040;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="univ_lorraine.iut.java.privatechat.controller.ChatController">
+<BorderPane prefHeight="720.0" prefWidth="1200.0" style="-fx-background-color: FF0040;" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="univ_lorraine.iut.java.privatechat.controller.ChatController">
     <top>
         <Label style="-fx-font-family: consolas; -fx-text-fill: #fff;" text="PrivateChat" BorderPane.alignment="CENTER">
             <font>

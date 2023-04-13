@@ -1,6 +1,7 @@
 package univ_lorraine.iut.java.privatechat.controller;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.FXCollections;
@@ -17,7 +18,6 @@ public class ChatController implements DataController{
     @FXML private ListView<Conversation> conversationListView;
     private ObservableList<Conversation> conversationList = FXCollections.observableArrayList();
 
-    private String userLogin;
     @FXML private Button btnAddContact;
 
     public void addConversation(Conversation conversation) {
@@ -25,14 +25,13 @@ public class ChatController implements DataController{
     }
 
     public void initialize() {
-        userLogin = App.getUser();
+        String userLogin = App.getUser();
         if (conversationListView != null) {
             conversationListView.setItems(conversationList);
             conversationListView.setCellFactory(listView -> new ConversationListCell());
         }
 
-        //Lire le fichier de contact
-        File contactFile = new File(App.getUser() + "_contact.txt");
+        File contactFile = new File(App.getUser() + "_contact.obj");
         FileInputStream f = null;
         ObjectInputStream s = null;
         if (contactFile.exists()) {
@@ -59,35 +58,41 @@ public class ChatController implements DataController{
         }
     }
 
-    public void deinitialize()  {
-        System.out.println("Finalize");
-        File contactFile = new File(App.getUser() + "_contact.txt");
+    protected void uninitialize() {
         FileOutputStream f = null;
         ObjectOutputStream s = null;
         try {
+            // Créer une liste de conversations
+            List<Conversation> conversations = new ArrayList<>(conversationList);
+
+            // Essayer de la sérialiser
+            File contactFile = new File(App.getUser() + "_contact.obj");
             f = new FileOutputStream(contactFile);
             s = new ObjectOutputStream(f);
-            s.writeObject(conversationList);
-            s.flush();
+            s.writeObject(conversations);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
-            try {
-                s.close();
-                f.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+        } finally {
+            if (s != null) {
+                try {
+
+                    s.close();
+                    f.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
+
     @FXML
     public void addContact() throws IOException {
-
+        uninitialize();
         App.setRoot("AddContact");
     }
     @FXML
     private void logout() throws IOException {
+        uninitialize();
         App.setRoot("login");
     }
 
