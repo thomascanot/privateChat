@@ -103,6 +103,7 @@ public class LoginController {
 
         // Lancer le chat
         App.setUser(username);
+        App.setWindowSize(1310, 760);
         App.setRoot("chat");
 
     }

@@ -49,7 +49,7 @@
                         <TextArea id="messageArea" fx:id="messageArea" editable="false" prefHeight="560.0" prefWidth="938.0" wrapText="true" />
                         <Line endX="938.0" endY="560.0" startX="1.0" startY="560.0" />
                         <TextField fx:id="inputField" layoutX="14.0" layoutY="568.0" prefHeight="88.0" prefWidth="805.0" />
-                        <Button fx:id="sendButton" layoutX="850.0" layoutY="600.0" mnemonicParsing="false" text="Envoyer" />
+                        <Button fx:id="sendButton" onAction="#sendMessage" layoutX="850.0" layoutY="600.0" mnemonicParsing="false" text="Envoyer" />
                     </children></AnchorPane>
             </content>
         </ScrollPane>

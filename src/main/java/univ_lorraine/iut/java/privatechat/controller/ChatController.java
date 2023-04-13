@@ -1,18 +1,24 @@
 package univ_lorraine.iut.java.privatechat.controller;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import univ_lorraine.iut.java.privatechat.App;
+import univ_lorraine.iut.java.privatechat.Serveur;
 import univ_lorraine.iut.java.privatechat.model.Contact;
 import univ_lorraine.iut.java.privatechat.model.Conversation;
 import univ_lorraine.iut.java.privatechat.model.ConversationListCell;
+import univ_lorraine.iut.java.privatechat.model.Message;
 
 public class ChatController implements DataController{
     @FXML private ListView<Conversation> conversationListView;
@@ -88,14 +94,35 @@ public class ChatController implements DataController{
     @FXML
     public void addContact() throws IOException {
         uninitialize();
+        App.setWindowSize(520, 400);
         App.setRoot("AddContact");
     }
     @FXML
     private void logout() throws IOException {
         uninitialize();
+        App.setWindowSize(520, 400);
         App.setRoot("login");
     }
 
+    @FXML
+    private TextField inputField;
+
+    @FXML
+    private TextArea messageArea;
+
+    @FXML
+    private void sendMessage(ActionEvent event) {
+        String messageText = inputField.getText();
+        inputField.clear();
+        Message message = new Message();
+        message.setContent(messageText);
+        message.setSender(App.getUser());
+        message.setSendedDate(LocalDateTime.now());
+        if (message != null) {
+            System.out.println(message);
+            messageArea.appendText(message.getSender() + " : " + message.getContent() + "\n");
+        }
+    }
     @Override
     public void setData(Object data) {
         if (data instanceof Contact) {

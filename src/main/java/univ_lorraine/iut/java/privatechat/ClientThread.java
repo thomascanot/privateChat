@@ -190,14 +190,12 @@ public final class ClientThread extends Thread {
                     return;
                 }
 
-                //String decryptedMessage = decrypt(messageRecu, sessionKey);
                 System.out.println("Message reçu : " + messageRecu);
 
                 ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
 
                 System.out.print("Saisie d'un message : ");
                 message = scanner.nextLine();
-                //String messacheCrypte = encrypt(message, sessionKey);
 
                 try {
                     oos.writeObject(message);

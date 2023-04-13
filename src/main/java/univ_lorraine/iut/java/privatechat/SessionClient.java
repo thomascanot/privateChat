@@ -215,7 +215,6 @@ class SessionClient {
 
                 System.out.print("Saisie d'un message : ");
                 message = scanner.nextLine();
-                //String messacheCrypte = encrypt(message, sessionKey);
                 try {
                     oos.writeObject(message);
                     oos.flush();
@@ -233,8 +232,6 @@ class SessionClient {
                     return;
                 }
 
-                // decrypt the message using the session key
-                //String decryptedMessage = decrypt(messageRecu, sessionKey);
                 System.out.println("Message reçu : " + messageRecu);
             }
         } catch (IOException | ClassNotFoundException e) {
